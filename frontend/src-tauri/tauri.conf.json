@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "RainMoal Workspace",
+  "version": "0.5.0",
+  "identifier": "com.rainmoal.workspace",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "RainMoal Workspace",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "",
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico",
+        "headerImage": null,
+        "sidebarImage": null
+      }
+    },
+    "longDescription": "RainMoal Workspace \u2014 Give AI a job. Persistent cloud agents that monitor information, analyze events, and notify you.",
+    "shortDescription": "Give AI a job.",
+    "category": "Productivity",
+    "copyright": "RainMoal Workspace"
+  },
+  "plugins": {
+    "notification": {
+      "permission": true
+    },
+    "updater": {
+      "active": false,
+      "endpoints": [
+        "https://releases.example.com/rainmoal/{{target}}/{{current_version}}"
+      ],
+      "dialog": true,
+      "pubkey": "REPLACE_WITH_TAURI_UPDATER_PUBLIC_KEY"
+    }
+  }
+}
